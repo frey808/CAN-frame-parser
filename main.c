@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "can.h"
+#include "j1939.h"
 
 #define MAX_LINE 256
 int main(void) {
@@ -27,7 +28,7 @@ int main(void) {
             continue;
         }
         printf("Frame #%d  (raw: %s)\n", ++frame_num, samples[i]);
-        can_print_frame(&frame);
+        j1939_print_frame(&frame);
         printf("\n");
     }
 
